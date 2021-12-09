@@ -1,7 +1,16 @@
-const router = require('express').Router();
+// Initialising express
+const router = require("express").router();
 
-const userRoutes = require('./user-routes');
+// Initialising main routes
 
-router.use('/users', userRoutes);
+const dashboardRoutes = require("./dashboard");
+const homeRoutes = require("./home");
+const apiRoutes = require("./api");
+
+// initiating the following routes
+
+router.use("/", homeRoutes);
+router.use("/", dashboardRoutes);
+router.use("/", apiRoutes);
 
 module.exports = router;
