@@ -1,9 +1,9 @@
 // Initialising express
-const router = require("express").router();
+const router = require("express").Router();
 
 // Initialising main routes
 
-const userRoutes = require("./user");
+const userRoutes = require("./usrRoutes");
 const postRoutes = require("./post");
 const commentRoutes = require("./comment");
 const fireBase = require("./firebase");
