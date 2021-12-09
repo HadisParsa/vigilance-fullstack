@@ -1,9 +1,12 @@
+
 // Dependencies
 const express = require('express');
 // Import express-handlebars
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const path = require('path');
+
+const routes = require('./controllers');
 
 
 // Sets up the Express App
@@ -23,5 +26,5 @@ app.get('/', async (req, res) => {
 
 // Starts the server to begin listening
 app.listen(PORT, () => {
-    console.log('Server listening on: http://localhost:' + PORT);
+    console.info(`Example app listening at http://localhost:${PORT} 🚀`);
 });
