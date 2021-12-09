@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "vigilance-fullstack",
+  "version": "1.0.0",
+  "description": "creating a blog",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HadisParsa/vigilance-fullstack.git"
+  },
+  "author": "vigilance team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HadisParsa/vigilance-fullstack/issues"
+  },
+  "homepage": "https://github.com/HadisParsa/vigilance-fullstack#readme"
+}
