@@ -24,7 +24,7 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 // Login
-router.post("/login", async (req, res) => {
+router.post("/login", withAuth, async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
@@ -63,7 +63,7 @@ router.post("/login", async (req, res) => {
 });
 
 // Logout
-router.post("/logout", (req, res) => {
+router.post("/logout", withAuth, (req, res) => {
   // When the user logs out, destroy the session
   if (req.session.loggedIn) {
     req.session.destroy(() => {
