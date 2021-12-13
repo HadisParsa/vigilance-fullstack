@@ -1,5 +1,5 @@
 const router = require("express").router();
-const { Blog, Comment, Like, User } = require();
+const { Blog, Comment, Like } = require();
 const withAuth = require("../../utils/auth");
 
 // Creates a blog (post)
@@ -26,7 +26,7 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-// User can like blog post
+// User can like a blog post
 router.post("/", withAuth, (req, res) => {
   Like.add({ ...req.body, userID: req.session.userID })
     .then((newLike) => {
