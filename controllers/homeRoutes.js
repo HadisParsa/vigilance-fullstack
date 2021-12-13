@@ -1,4 +1,9 @@
 const router = require("express").Router();
+const { User } = require("../models");
+
+router.get('/', async (req, res) => {
+  res.render('all');
+}); 
 
 // Login route
 router.get("/login", (req, res) => {
