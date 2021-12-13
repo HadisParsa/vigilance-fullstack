@@ -1,12 +1,8 @@
-// Initialising express
-const router = require("express").Router();
+const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const projectRoutes = require('./projectRoutes');
 
-// Initialising main routes
-
-const userRoutes = require("./userRoutes");
-
-// initiating the following routes
-
-router.use("/", userRoutes);
+router.use('/users', userRoutes);
+router.use('/projects', projectRoutes);
 
 module.exports = router;

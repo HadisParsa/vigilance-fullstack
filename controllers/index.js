@@ -1,18 +1,9 @@
-// Initialising express
-const router = require("express").Router();
+const router = require('express').Router();
 
-// Initialising main routes
+const apiRoutes = require('./api');
+const homeRoutes = require('./homeRoutes');
 
-const homeRoutes = require("./homeRoutes");
-//const homeRoutes = require("./home");
-const apiRoutes = require("./api");
-
-// initiating the following routes
-
-//router.use("/", homeRoutes);
-router.use("/api", apiRoutes);
-router.use("/", homeRoutes);
-
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
 
 module.exports = router;
-
