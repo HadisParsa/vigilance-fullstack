@@ -1,14 +1,13 @@
-const router = require("express").router();
-const { Blog, Comment, Like } = require();
+const router = require("express").Router();
+const { BlogPost, Comment, Like } = require('../../models');
 const withAuth = require("../../utils/auth");
-const { post } = require("./projectRoutes");
 
 // Creates a blog (post)
 
 router.post("/", withAuth, (req, res) => {
   const body = req.body;
-  console.log(req.session.userID);
-  Blog.create({ ...body, userID: req.session.userID })
+  console.log(req.session.user_id);
+  BlogPost.create({ ...body, userID: req.session.user_id })
     .then((newBlog) => {
       res.json(newBlog);
     })
@@ -21,7 +20,7 @@ router.post("/", withAuth, (req, res) => {
 
 router.put("/:id", withAuth, (req, res) => {
   console.log(req.body, req.params.id)
-  Blog.update(req.body, {
+  BlogPost.update(req.body, {
     where: {
       id: req.params.id
     }
@@ -41,7 +40,7 @@ router.put("/:id", withAuth, (req, res) => {
 // User can comment on a blog post
 
 router.post("/", withAuth, (req, res) => {
-  Comment.create({ ...req.body, userID: req.session.userID })
+  Comment.create({ ...req.body, userID: req.session.user_id })
     .then((newComment) => {
       res.json(newComment);
     })
@@ -53,7 +52,7 @@ router.post("/", withAuth, (req, res) => {
 // User can like a blog post
 
 router.post("/", withAuth, (req, res) => {
-  Like.add({ ...req.body, userID: req.session.userID })
+  Like.add({ ...req.body, userID: req.session.user })
     .then((newLike) => {
       res.json(newLike);
     })
@@ -66,7 +65,7 @@ router.post("/", withAuth, (req, res) => {
 
 router.delete("/:id", withAuth, (req, res) => {
   console.log(req.body, req.params.id)
-  Blog.destroy({
+  BlogPost.destroy({
     where: {
       id: req.params.id
     }
