@@ -12,6 +12,22 @@ Like.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    blogpost_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'blogpost',
+        key: 'id',
+      }
+    }
   },
   {
     sequelize,
