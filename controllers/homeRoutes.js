@@ -23,15 +23,50 @@ router.get('/', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      posts, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
   }
 });
+
+//comment from hadis
+router.get('/post/:id', async (req, res) => {
+  try {
+    const title = "title";
+    const post = 'some post'
+    const fakePost = {
+      title,
+      // title: "title",
+      post,
+      // post: "some post",
+      Comment
+    }
+    // Fake post to use in template
+    const fakePost2 = {
+      nameOf: "Hadis",
+      title: "test post",
+      post: "The culmination of the progressionist speech for which I labored was often criticism, bored expressions and, sometimes, outright rejection; thus, after unsuccessful revisions and heartfelt considerations, I came to a conclusion: no radical idea, however expertly or clumsily delivered and written, will be unanimously accepted; instead, radical ideas will often encounter criticism without constructive comment, but this fact does not negate our responsibility to write them and take a stand.",
+      comment: [],
+    }
+    res.render('post', {
+      ...fakePost2,
+      // title: "test post",
+      // post:"lorem",
+      // logged_in: req.session.logged_in
+      logged_in: false,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+})
+
+
+
 
 router.get('/project/:id', async (req, res) => {
   try {
