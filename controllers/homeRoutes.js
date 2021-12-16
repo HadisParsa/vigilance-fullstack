@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
     // Pass serialized data and session flag into template
-    res.render('homepage', {
+    res.render('allblog', {
       posts,
       logged_in: req.session.logged_in
     });
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 });
 
 //hadis 
-router.get('/post/:id', async (req, res) => {
+router.get('/blog/:id', async (req, res) => {
   try {
     const postData = await BlogPost.findByPk(req.params.id, {
       include: [
@@ -50,7 +50,7 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
     const post = postData.get({ plain: true })
-    res.render('post', {
+    res.render('blog', {
       ...post,
       nameOf: "Hadis",
 
@@ -67,27 +67,27 @@ router.get('/post/:id', async (req, res) => {
 
 
 
-router.get('/project/:id', async (req, res) => {
-  try {
-    const projectData = await BlogPost.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+// router.get('/project/:id', async (req, res) => {
+//   try {
+//     const projectData = await BlogPost.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
-    const project = projectData.get({ plain: true });
+//     const project = projectData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('project', {
+//       ...project,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -100,7 +100,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('blog', {
       ...user,
       logged_in: true
     });
