@@ -1,78 +1,18 @@
-<nav>
-  <ul>
-    <li><a href="#home">Welcom letter</a></li>
-    <li><a href="#about">about</a></li>
-    <li><a href="#posts">post</a></li>
-    <li><a href="#logout">logout</a></li>
-  </ul>
-</nav>
+<!--in this page we are geting data to creat a blog page for our user-->
 
-<div class="container-all">
-  <div class="welcome" id="home">
-    <button class="menu-button">
-      <svg class="hamburger" x="0px" y="0px" viewBox="0 0 30 17" height="17" width="30">
-        <g transform="translate(-15 -15)">
-          <rect x="15" y="16" class="st0" width="30" height="2" />
-        </g>
-        <g transform="translate(-15 -9)">
-          <rect x="15" y="16" class="st0" width="30" height="2" />
-        </g>
-        <g transform="translate(-15 -3)">
-          <rect x="15" y="16" class="st0" width="30" height="2" />
-        </g>
-      </svg>
-      <svg class="close-icon" x="0px" y="0px" viewBox="0 0 30 17" height="17" width="30">
-        <g transform="translate(-15 -15)">
-          <polygon class="st0" points="31.2,23.5 37,29.3 35.8,30.5 30,24.7 24.2,30.5 23,29.3 28.8,23.5 23,17.7 24.2,16.5 30,22.3 
-           35.8,16.5 37,17.7 	" />
-        </g>
-      </svg>
-    </button>
+<section class="comments" id="comments">
 
-
-    <h1>Welcome to your<span>Blog page</span></h1>
+  <div class="form-group">
+    <label for="project-name">
+      <h2> post title: </h2>
+    </label>
+    <input class="form-input" type="text" id="project-name" name="project-name" />
   </div>
 
-  <section class="about" id="about">
-    <div class="intro-middle">
-      <h2>Making it happen</h2>
-      <p>Share your story with the world. Stand out with a professionally-designed template. Promote your blog and
-        build your online story page.
-      </p>
+  <h2>Post: </h2>
+  <label message="message" class="message">
+    <textarea id="message"></textarea>
+  </label>
+  <input class="button" type="submit" value="post">
 
-    </div>
-  </section>
-
-
-  <section class="blog-posts" id="posts">
-
-    <h1 class="about-title">{{nameOf}}</h1>
-    <h2 class="about-subtitle">{{title}}</h2>
-    <div class="about-text">
-      <p>
-        {{post}}
-      </p>
-
-      <section class="comments" id="comments">
-        <p>
-          {{comments}}
-        </p>
-      </section>
-
-
-      <!--  how to creat a <P> after send -->
-      <section class="comments" id="comments">
-        <h2>comments:</h2>
-
-        <label message="message" class="message">
-          <textarea id="message"></textarea>
-        </label>
-        <input class="button" type="submit" value="SEND">
-
-      </section>
-
-    </div>
-  </section>
-
-
-  <script src="/js/nav.js"></script>
+</section>
