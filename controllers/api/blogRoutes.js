@@ -39,8 +39,8 @@ router.put("/:id", withAuth, (req, res) => {
 
 // User can comment on a blog post
 
-router.post("/", withAuth, (req, res) => {
-  Comment.create({ ...req.body, userID: req.session.user_id })
+router.post("/:id/comment", withAuth, (req, res) => {
+  Comment.create({ ...req.body, blogpost_id:req.params.id ,user_id: req.session.user_id })
     .then((newComment) => {
       res.json(newComment);
     })
@@ -51,8 +51,8 @@ router.post("/", withAuth, (req, res) => {
 
 // User can like a blog post
 
-router.post("/", withAuth, (req, res) => {
-  Like.add({ ...req.body, userID: req.session.user })
+router.post("/:id/like", withAuth, (req, res) => {
+  Like.add({ ...req.body, user_id: req.session.user })
     .then((newLike) => {
       res.json(newLike);
     })

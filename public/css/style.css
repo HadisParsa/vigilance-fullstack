@@ -13,12 +13,46 @@ header, .project:not(:last-child) {
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: #033f5b;
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+
+.loginTop{
+  display: inline-block;
+  width: auto;
+  min-width: auto;
+  margin-top: 1em;
+  margin-left: auto;
+  background: #e8e8ad;
+  border: none;
+  font-size: 2.5rem;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+  padding: .5em 1.5em
 }
+
+footer {
+  background: #223843;
+  padding: 5em 0;
+  text-align: center; }
+
+
+
+.encouragingQoutes::before {
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 4em auto;
+  width: 25%; }
+
+  footer {
+    list-style-type: none;
+    margin-bottom: 0%;
+  }
+  
+  
