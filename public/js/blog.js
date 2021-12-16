@@ -2,14 +2,15 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('input[name="Blog-title"]').value;
-  const body = document.querySelector('textarea[name="Blog-body]').value;
+  const body = document.querySelector('textarea[name="Blog-body"]').value;
   const likeBtn = document.querySelector();
 
-  const token = await fetch(`/api/BlogPost`, {
+  const response = await fetch(`/api/BlogPost`, {
     method: 'POST',
     body: JSON.stringify({
       title,
-      content,
+      body,
+      likeBtn,
     }),
     headers: {
       'Content-Type': 'application/json',
@@ -19,7 +20,7 @@ const newFormHandler = async (event) => {
   if (Response.ok) {
     document.location.replace('/');
   } else {
-    alert(respone.statusText);
+    alert(response.statusText);
   }
 };
 
