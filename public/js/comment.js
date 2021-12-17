@@ -12,7 +12,8 @@ const commentFormHandler = async (event) => {
             },
         })
     }
-    text.value = "";
+    document.querySelector('#message').value = ""
+    document.location.reload()
 }
 
 document
