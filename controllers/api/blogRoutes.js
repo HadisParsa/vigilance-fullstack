@@ -6,7 +6,7 @@ const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, (req, res) => {
   const body = req.body;
-  console.log(req.session.user_id);
+  console.log(req.session.name + "\n");
   BlogPost.create({ ...body, userID: req.session.user_id })
     .then((newBlog) => {
       res.json(newBlog);
@@ -40,11 +40,13 @@ router.put("/:id", withAuth, (req, res) => {
 // User can comment on a blog post
 
 router.post("/:id/comment", withAuth, (req, res) => {
+  
   Comment.create({ ...req.body, blogpost_id:req.params.id ,user_id: req.session.user_id })
     .then((newComment) => {
       res.json(newComment);
     })
     .catch((err) => {
+      console.log(err)
       res.status(500).json(err);
     });
 });
