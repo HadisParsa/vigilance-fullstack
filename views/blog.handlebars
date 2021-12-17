@@ -46,7 +46,7 @@
 
   <section class="blog-posts" id="posts">
 
-    <h1 class="about-title">{{nameOf}}</h1>
+    <h1 class="about-title">{{user.name}}</h1>
     <h2 class="about-subtitle">{{title}}</h2>
     <div class="about-text">
       <p>
@@ -54,13 +54,13 @@
       </p>
 
       <section class="comments" id="comments">
-        <p>
-          {{comments}}
-        </p>
+        {{#each comments as | comment |}}
+        {{> comment}}
+        {{/each}}
       </section>
 
       <!--  how to creat a <P> after send -->
-      <section class="comments" id="comments">
+      <form class="comments" id="comments-form">
         <h2>comments:</h2>
 
         <label message="message" class="message">
@@ -68,10 +68,14 @@
         </label>
         <input class="button" type="submit" value="SEND">
 
-      </section>
+      </form>
 
     </div>
   </section>
 
-
+  <script>
+    const blogId = {{id}};
+  </script>
   <script src="/js/nav.js"></script>
+  <script src="/js/comment.js"></script>
+  
