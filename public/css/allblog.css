@@ -1,0 +1,139 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 96%;
+  margin: 2rem auto;
+}
+
+/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
+.card-column {
+  flex: 1 0 100%;
+  padding: 1.5rem;
+  /* when the screen resizes, make it so our columns don't jump in size */
+  transition: flex-basis 500ms linear;
+  margin-bottom: 1.5rem;
+}
+
+/* make each code card a flexbox column to align and justify content within it */
+.code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem;
+  color: var(--heliotrope);
+
+  /* outline is like border, but on the outside of the box instead of inside */
+  outline: 2px dashed var(--gin);
+  outline-offset: -2px;
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+  /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+  position: relative;
+  margin: -4rem 0 1.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--outer-space);
+  color: var(--heliotrope);
+  border: 2px solid var(--gin);
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+.code-card:hover,
+.code-card:hover .card-header {
+  box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
+}
+
+/* each card's code block grows to the height of the largest code block on the page, making each card even in height */
+.code-card .code-block {
+  flex-grow: 1;
+}
+
+.code-card pre {
+  /* set styles to make it so code wraps in <pre> instead of overflowing */
+  white-space: pre-wrap;
+  overflow: auto;
+  tab-size: 4;
+  padding: 1.2rem 1rem;
+  color: var(--gin);
+  border-radius: 8px;
+  /* use linear-gradient() function to create a fading background  */
+  background-image: linear-gradient(
+    rgba(250, 252, 156, 0.3) 0%,
+    #223843a6 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+/* on <pre> click, select all contents so the code is highlighted */
+.code-card pre:active {
+  user-select: all;
+}
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+  /* on tablets, set columns to only be 50% of the width and not grow */
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* select the last child to grow to full width if it has space to grow */
+  .card-column:last-child {
+    flex-grow: 1;
+  }
+}
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+  header {
+    width: 75%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+.card-button{
+display: inline-block;
+width: auto;
+background: #c1bfb1;
+border: none;
+font-size: 1.5rem;
+letter-spacing: 0.15em;
+color: #FFFFFF;
+line-height: 1;
+font-family: "Six Caps", sans-serif;
+font-weight: 300;
+padding: .5em 1.5em;
+}
+
+
+.card-button:hover {
+  background-color: #802a2a;
+  color: white;
+}
