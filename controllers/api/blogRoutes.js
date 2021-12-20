@@ -12,6 +12,7 @@ router.post("/", withAuth, (req, res) => {
       res.json(newBlog);
     })
     .catch((err) => {
+      console.log(err)
       res.status(500).json(err);
     });
 });

@@ -1,16 +1,15 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="Blog-title"]').value;
-  const body = document.querySelector('textarea[name="Blog-body"]').value;
-  const likeBtn = document.querySelector();
+  const title = document.querySelector('#project-name').value;
+  const body = document.querySelector('#blog-text').value;
+  
 
-  const response = await fetch(`/api/BlogPost`, {
+  const response = await fetch(`/api/post`, {
     method: 'POST',
     body: JSON.stringify({
       title,
       body,
-      likeBtn,
     }),
     headers: {
       'Content-Type': 'application/json',
