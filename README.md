@@ -82,24 +82,18 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `HadisParsa`, `vigilance-fullstack`, ``, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+This blog page is a simple application that a user can sign up/login, post an article,and comment on other articles.
 
 
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [javascript](https://www.javascript.com/)
+* [expressjs](https://expressjs.com/)
+* [node](https://nodejs.org/en/)
+* [mysql](https://www.mysql.com/)
+* [sequelize](https://sequelize.org/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -137,34 +131,6 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
-
-See the [open issues](https://github.com/HadisParsa/vigilance-fullstack/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -182,19 +148,8 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
-## License
+## URL link
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@](https://twitter.com/) - email@email_client.com
 
 Project Link: [https://github.com/HadisParsa/vigilance-fullstack](https://github.com/HadisParsa/vigilance-fullstack)
 
@@ -205,9 +160,8 @@ Project Link: [https://github.com/HadisParsa/vigilance-fullstack](https://github
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Jake](https://github.com/jakecolledge97)
+* [Gurtej](https://github.com/gurtej154)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
