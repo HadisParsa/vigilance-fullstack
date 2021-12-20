@@ -1,7 +1,8 @@
 <!--in this page we are geting data to creat a blog page for our user-->
-
+<form class="comments" id="new-post-form">
 <section class="comments" id="comments">
 
+  
   <div class="form-group">
     <label for="project-name">
       <h2> post title: </h2>
@@ -9,11 +10,14 @@
     <input class="form-input" type="text" id="project-name" name="project-name" />
   </div>
 
+  
   <h2>Post: </h2>
   <label message="message" class="message">
     <textarea id="message"></textarea>
   </label>
-  <input class="button" type="submit" value="post">
-
-
+  <input class="button" type="submit" value="post" id="blog-text">
+ 
 </section>
+</form>
+
+<script src="./js/blog.js"></script>

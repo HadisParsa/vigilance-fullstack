@@ -32,6 +32,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/blog', async (req, res) => {
   try {
     res.render('post', {
@@ -41,8 +42,8 @@ router.get('/blog', async (req, res) => {
     console.log(err)
     res.status(500).json(err);
   }
+});
 
-})
 //hadis 
 router.get('/blog/:id', async (req, res) => {
   try {
