@@ -32,6 +32,15 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/blog', async (req, res) => {
+  try {
+    res.render('post', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
 
 router.get('/blog', async (req, res) => {
   try {
